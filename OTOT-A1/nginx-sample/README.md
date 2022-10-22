@@ -4,5 +4,5 @@ There is a static `index.html` file. Your task is to serve this static html page
 
 
 #### Commands
-sudo docker build -t nginx-reverse-proxy .
+docker build -t nginx-reverse-proxy .
 docker run -p 80:80 nginx-reverse-proxy

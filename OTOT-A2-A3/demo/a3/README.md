@@ -213,3 +213,10 @@ Furthermore, do note that zone "a" Pods are uneven across worker and worker2.
 This is because of the existing Pods on those nodes that result in overall Pod number balance but imbalance between Pods belonging to an individual Deployment.
 
 You can add a constraint to make sure the Pods are spread across all node evenly instead.
+
+
+## Demo
+`kubectl apply -f hpa.yml`
+`kubectl apply -f deployment-zone-aware.yml`
+
+`kubectl get po -lapp=a2-zone-aware -owide --sort-by='.spec.nodeName'`
