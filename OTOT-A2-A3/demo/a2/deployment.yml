@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a2
+  labels:
+    app: a2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: a2
+  template:
+    metadata:
+      labels:
+        app: a2
+    spec:
+      containers:
+        - name: a2
+          image: a1/app
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 3000
+          resources:
+            limits:
+              cpu: 20m
+              memory: 100Mi
